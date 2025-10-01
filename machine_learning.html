@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es Machine Learning? - Élite Oro Neón</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Integrado: Tema Profesional Dark Mode Élite (Fondo Oscuro, Acentos Oro Neón) */
+        :root {
+            --bg-dark: #0a0a0a; /* Negro Profundo */
+            --text-light: #f8f9fa; /* Texto Blanco Suave */
+            --accent-gold: #FFD700; /* Dorado Puro */
+            --accent-neon-glow: #FFA500; /* Ámbar Intenso para el Brillo Neón */
+            --card-bg: #111111; /* Fondo de tarjetas */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        /* Estilos de la Hero Section */
+        .hero {
+            position: relative;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* IMAGEN ML: Abstract Network/Data Visualization */
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiQMU7MEE5_cbe5TjaawTqPmyi77DaoMZ7w&s"); 
+            background-size: cover; /* Asegura que la imagen siempre cubra el área */
+            background-position: center;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Oscurecer la imagen */
+            z-index: 1;
+        }
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+            color: var(--text-light);
+            /* Sombra Neón con Dorado/Ámbar */
+            text-shadow: 0 0 10px var(--accent-neon-glow), 0 0 20px rgba(255, 215, 0, 0.5); 
+        }
+        /* Estilos de Navegación, Botones y Títulos */
+        .navbar {
+            background-color: var(--bg-dark) !important;
+            border-bottom: 2px solid var(--accent-gold); /* Borde dorado */
+        }
+        .nav-link, .navbar-brand {
+            color: var(--text-light) !important;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .nav-link:hover, .navbar-brand:hover {
+            color: var(--accent-gold) !important;
+            text-shadow: 0 0 8px var(--accent-neon-glow); /* Efecto Neón en el hover */
+        }
+        .btn-primary {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--bg-dark);
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-neon-glow);
+            border-color: var(--accent-neon-glow);
+            color: var(--bg-dark);
+            box-shadow: 0 0 10px var(--accent-neon-glow);
+        }
+        h2, h3, .text-warning {
+            color: var(--accent-gold) !important;
+        }
+        /* Estilos de Tarjetas y Bordes */
+        .card {
+            background-color: var(--card-bg) !important;
+            border: 1px solid var(--accent-gold); /* Borde con Dorado */
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); /* Sombra suave con Dorado */
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4); /* Sombra más fuerte al hacer hover */
+        }
+        .list-unstyled li {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        .section-header {
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        /* ESTILO LLAMATIVO NEÓN PARA IMÁGENES/BLOQUES DE CONTENIDO */
+        .border-neon {
+            border-color: var(--accent-gold) !important; /* Borde Dorado */
+        }
+        .shadow-neon-gold {
+            /* Sombra llamativa Oro Neón */
+            box-shadow: 0 0 20px var(--accent-neon-glow), 0 0 10px var(--accent-gold);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .shadow-neon-gold:hover {
+            box-shadow: 0 0 30px var(--accent-neon-glow), 0 0 15px var(--accent-gold);
+            transform: scale(1.02);
+        }
+        /* Color para texto específico */
+        .text-neon {
+            color: var(--accent-gold) !important;
+            text-shadow: 0 0 5px var(--accent-neon-glow);
+        }
+        /* Estilo para el ícono del Navbar Toggler (Ahora dorado) */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FFD700' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+        /* --- CORRECCIÓN DE VISIBILIDAD DE TEXTO A BLANCO --- */
+        .card p, .card li, .card blockquote, .card .blockquote-footer, .card small {
+            color: var(--text-light) !important;
+        }
+        .text-light { /* Asegurar que el texto general sea claro */
+             color: var(--text-light) !important;
+        }
+        .text-neon strong {
+            color: var(--accent-gold) !important;
+        }
+        /* Fin de corrección de visibilidad de texto */
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid container">
+        <a class="navbar-brand fw-bold" href="index.html" style="color: var(--accent-gold) !important; text-shadow: 0 0 5px var(--accent-gold);">PROYECTO FINAL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--accent-gold);">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="IA.HTML">Inteligencia Artificial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-neon" href="machine_learning.html">Machine Learning</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="emergentes.html">Tecnologías Emergentes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Tendencias.html">Tendencias 2025</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container position-relative z-index-2">
+        <h1 class="display-3 fw-bolder">Machine Learning </h1>
+        <p class="lead mt-3 fs-4">Un subcampo de la Inteligencia Artificial que permite a los sistemas aprender de los datos sin ser programados explícitamente.</p>
+    </div>
+</header>
+
+<main class="container py-5">
+    
+    <h2 class="text-center mb-5 section-header">Conceptos Fundamentales</h2>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 h-100">
+                <h3 class="card-title text-center mb-3">Datos de Entrenamiento</h3>
+                <p class="card-text">La materia prima del Machine Learning. La calidad y cantidad de estos datos determinan la efectividad del modelo.</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 h-100">
+                <h3 class="card-title text-center mb-3">Modelo</h3>
+                <p class="card-text">El resultado del proceso de entrenamiento. Es la representación matemática de un proceso o fenómeno que puede hacer predicciones o tomar decisiones.</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 h-100">
+                <h3 class="card-title text-center mb-3">Algoritmo</h3>
+                <p class="card-text">Las instrucciones y reglas que el modelo utiliza para aprender de los datos, como regresión, árboles de decisión o redes neuronales.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 bg-dark rounded-4 p-4 my-5 border border-neon shadow-neon-gold">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6 order-lg-1">
+                <h3 class="text-warning display-6 mb-3">Aprendizaje por la Experiencia</h3>
+                <blockquote class="blockquote border-start border-5 border-neon ps-4">
+                    <p class="mb-0 fs-5 text-light">"El Machine Learning no programa una solución, sino que programa una máquina para que **encuentre su propia solución** a partir de la experiencia (datos). Es como enseñar a un niño."</p>
+                    <footer class="blockquote-footer text-light mt-2">Un Experto en IA</footer>
+                </blockquote>
+                <a href="#" class="btn btn-primary mt-3">Saber más sobre Datos</a>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <img src="https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?q=80&w=1939&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Visualización de un Algoritmo de Machine Learning" class="img-fluid rounded-4 shadow-neon-gold">
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-secondary my-5">
+
+    <h2 class="text-center mb-5 section-header">Tipos de Aprendizaje</h2>
+
+    <section class="py-4 my-4">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h3 class="card-title mb-3">1. Aprendizaje Supervisado</h3>
+                <p class="card-text">El modelo se entrena con datos *etiquetados*, lo que significa que cada dato de entrada tiene una respuesta correcta conocida, permitiendo la predicción o clasificación.</p>
+                <h4 class="text-warning mt-3">Usos Clave:</h4>
+                <ul class="list-unstyled">
+                    <li><strong class="text-neon">Clasificación:</strong> Detectar spam en emails.</li>
+                    <li><strong class="text-neon">Regresión:</strong> Predecir el precio de una casa.</li>
+                </ul>
+                <span class="badge bg-primary rounded-pill text-dark p-2 mt-3">Requiere Datos Etiquetados</span>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR29K3vpPM_rY09nGplwfMRNTEVU7MA3kV-1w&s" alt="Supervised Learning" class="img-fluid rounded-4 shadow-neon-gold">
+            </div>
+        </div>
+    </section>
+    
+    <hr class="border-secondary my-5">
+
+    <section class="py-4 my-4">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6 order-lg-last">
+                <h3 class="card-title mb-3">2. Aprendizaje No Supervisado</h3>
+                <p class="card-text">El modelo se entrena con datos *sin etiquetar*. El objetivo es encontrar patrones o estructuras ocultas dentro de los datos por sí mismo.</p>
+                <h4 class="text-warning mt-3">Usos Clave:</h4>
+                <ul class="list-unstyled">
+                    <li><strong class="text-neon">Clustering:</strong> Agrupar clientes por hábitos de compra.</li>
+                    <li><strong class="text-neon">Asociación:</strong> Encontrar productos comprados juntos.</li>
+                </ul>
+                <span class="badge bg-warning rounded-pill text-dark p-2 mt-3">Encuentra Patrones Ocultos</span>
+            </div>
+            <div class="col-lg-6 text-center order-lg-first">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxLDieacaLMCuNBDfNc11TdCwp5QwFea6uZg&s" alt="Unsupervised Learning" class="img-fluid rounded-4 shadow-neon-gold">
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-secondary my-5">
+    
+    <section class="py-4 my-4">
+        <h3 class="card-title mb-3 text-center">3. Aprendizaje por Refuerzo</h3>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card p-4 h-100 bg-black border-neon">
+                    <p class="card-text text-light">Un agente aprende a tomar decisiones en un entorno (como un juego o un simulador) para maximizar la recompensa. Aprende a través de prueba y error, con un sistema de penalizaciones y premios, ideal para navegación y robótica avanzada.</p>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h4 class="text-warning mt-3">Ventaja:</h4>
+                            <p class="text-light">Excelente para problemas complejos sin soluciones algorítmicas claras (ej. vehículos autónomos).</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-warning mt-3">Desventaja:</h4>
+                            <p class="text-light">Requiere una enorme cantidad de interacciones y puede ser computacionalmente muy costoso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="card bg-dark border-warning p-4 mt-5 shadow-lg">
+        <div class="card-body">
+            <h3 class="card-title text-center text-warning mb-4">Consejo de Implementación</h3>
+            <p class="text-light fs-5 text-center">
+                **Cómo elegir la plataforma de IA adecuada para machine learning:**
+            </p>
+            <p class="text-light text-center"> 
+                Al revisar múltiples proveedores, no solo pienses en la cantidad de características, sino en **qué hará la plataforma por su organización**. Un sistema equivocado puede disparar los costos o limitar el uso de otras tecnologías valiosas.
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer class="text-center text-light border-top p-4" style="background-color: var(--bg-dark); border-color: var(--accent-gold) !important;">
+    <div class="container">
+        <h5 class="text-warning">Universidad Espíritu Santo</h5>
+        <p class="mb-1">Carrera: Desarrollo de Software</p>
+        <p class="mb-0"><small class="text-muted">Guayaquil - Ecuador &copy; 2024</small></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

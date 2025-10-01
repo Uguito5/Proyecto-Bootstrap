@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tendencias 2025 - Top 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-light: #ffffff;
+      --accent-gold: #FFD700;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* Efecto dorado neón */
+    .neon-gold {
+      color: var(--accent-gold);
+      text-shadow: 0 0 5px var(--accent-gold),
+                   0 0 10px var(--accent-gold),
+                   0 0 20px #FFA500,
+                   0 0 40px #FFA500;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url("https://img.impactotic.co/wp-content/uploads/2025/01/15144549/Tendencias-de-Big-Data-para-el-2025.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 2;
+      color: var(--text-light);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: var(--bg-dark) !important;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+    .navbar-brand {
+      color: var(--accent-gold) !important;
+      text-shadow: 0 0 5px var(--accent-gold);
+    }
+    .nav-link {
+      color: var(--text-light) !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--accent-gold) !important;
+      text-shadow: 0 0 8px var(--accent-gold);
+    }
+
+    /* CARDS */
+    .card {
+      background-color: #111111 !important;
+      border: 1px solid var(--accent-gold);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      color: var(--text-light);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    /* SECCIONES */
+    .section-header {
+      border-bottom: 3px solid var(--accent-gold);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      color: var(--accent-gold);
+      text-shadow: 0 0 8px var(--accent-gold);
+    }
+
+    /* TABLA */
+    .table thead {
+      background-color: #000;
+    }
+    .table thead th {
+      color: var(--accent-gold);
+      text-shadow: 0 0 5px var(--accent-gold), 0 0 10px #FFA500;
+    }
+    .table tbody td {
+      color: var(--text-light);
+    }
+
+    /* IMÁGENES */
+    .collage-img {
+      border: 2px solid var(--accent-gold);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      transition: transform 0.3s;
+    }
+    .collage-img:hover { transform: scale(1.05); }
+
+    /* FOOTER */
+    footer {
+      background-color: #0a0a0a;
+      border-top: 2px solid var(--accent-gold);
+    }
+    footer h5 {
+      color: var(--accent-gold);
+      text-shadow: 0 0 5px var(--accent-gold);
+    }
+    footer p, footer small {
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid container">
+    <a class="navbar-brand fw-bold neon-gold" href="index.html">PROYECTO FINAL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="IA.html">Inteligencia Artificial</a></li>
+        <li class="nav-item"><a class="nav-link" href="machine_learning.html">Machine Learning</a></li>
+        <li class="nav-item"><a class="nav-link" href="emergentes.html">Tecnologías Emergentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="Tendencias.html">Tendencias 2025</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container position-relative">
+    <h1 class="display-3 fw-bolder neon-gold">Tendencias Tecnológicas 2025</h1>
+    <p class="lead mt-3 fs-4">El Top 5 de las tecnologías que dominarán la industria en el próximo año.</p>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="container py-5">
+
+  <h2 class="text-center mb-5 section-header">Top 5 Tendencias Clave</h2>
+
+  <div class="row g-4 mb-5">
+    <div class="col-lg-6">
+      <div class="card p-4 h-100">
+        <h3 class="neon-gold">1. IA Generativa y Creatividad</h3>
+        <p>La capacidad de la IA para crear contenido nuevo será esencial en todos los flujos de trabajo.</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card p-4 h-100">
+        <h3 class="neon-gold">2. Ciberseguridad Resiliente</h3>
+        <p>Más que prevenir ataques, el foco estará en recuperarse rápido con IA en tiempo real.</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card p-4 h-100">
+        <h3 class="neon-gold">3. Computación Espacial (VR/AR)</h3>
+        <p>Integración de VR/AR en el trabajo y educación para experiencias inmersivas.</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card p-4 h-100">
+        <h3 class="neon-gold">4. Edge Computing</h3>
+        <p>Procesamiento más cerca del usuario con baja latencia gracias a 5G/6G.</p>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card p-4 h-100">
+        <h3 class="neon-gold">5. Sostenibilidad Acelerada</h3>
+        <p>Uso de Big Data, IoT y ML para optimizar energía y cadenas de suministro.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA -->
+  <h2 class="text-center my-5 section-header">Tabla Comparativa</h2>
+  <div class="table-responsive">
+    <table class="table table-dark table-striped table-bordered align-middle text-center">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tendencia</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>IA Generativa</td><td>Creación de contenido (texto, imágenes, música, código).</td></tr>
+        <tr><td>2</td><td>Ciberseguridad Resiliente</td><td>Detectar, responder y recuperarse rápido de ataques.</td></tr>
+        <tr><td>3</td><td>Computación Espacial</td><td>Integración de VR/AR en trabajo y educación.</td></tr>
+        <tr><td>4</td><td>Edge Computing</td><td>Procesamiento cercano al usuario con baja latencia.</td></tr>
+        <tr><td>5</td><td>Sostenibilidad Tecnológica</td><td>Uso de Big Data, IoT y ML para eficiencia energética.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GALERÍA -->
+  <h2 class="text-center my-5 section-header">Imágenes Relevantes</h2>
+  <div class="row g-3">
+    <div class="col-6 col-md-3"><img src="https://cdn.bap-software.net/2020/09/blockchain-technology.jpg" class="img-fluid collage-img rounded" alt="Blockchain"></div>
+    <div class="col-6 col-md-3"><img src="https://espacioerp.com/wp-content/uploads/2024/03/internet-de-las-cosas-industria-4.0.jpg" class="img-fluid collage-img rounded" alt="IoT"></div>
+    <div class="col-6 col-md-3"><img src="https://incae.edu/wp-content/uploads/2023/10/big_data_01.jpg" class="img-fluid collage-img rounded" alt="Big Data"></div>
+    <div class="col-6 col-md-3"><img src="https://inesdi-cdn.s3.eu-west-3.amazonaws.com/inesdi-prod/2023-09/7-herramientas-big-data-vitales-para-tu-empresa-2023.jpeg" class="img-fluid collage-img rounded" alt="IA"></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-light p-4">
+  <div class="container">
+    <h5 class="neon-gold">Universidad Espíritu Santo</h5>
+    <p class="mb-1">Carrera: Desarrollo de Software</p>
+    <p class="mb-0"><small>&copy; 2024 Guayaquil - Ecuador</small></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
